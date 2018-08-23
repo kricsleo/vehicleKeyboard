@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": " 虚拟车牌输入键盘",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white"
+  }
+}

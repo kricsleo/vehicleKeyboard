@@ -1,0 +1,43 @@
+/* keyboard.wxss */
+.page {
+  width: 100%;
+  height: 1000rpx;
+}
+
+.text {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+   -webkit-align-items: center;
+  width: 90%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 20rpx auto;
+  padding: 10rpx;
+  color: #000;
+  background-color: #fff;
+  font-size: 36rpx;
+  border-radius: 8rpx;
+}
+
+.icon-search {
+  width: 30rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.text_con {
+  border: 1rpx solid #eee;
+}
+
+.text_con_focus {
+  width: 85%;
+  padding: 0 20rpx;
+  border: 1rpx solid #ff7149;
+}
+
+.placeholder {
+  color: #bdc3c7;
+}

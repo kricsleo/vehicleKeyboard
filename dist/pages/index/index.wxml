@@ -1,0 +1,26 @@
+<view class="page" bindtap="hideKeyboard">
+
+  <!-- 未激活输入框开始 -->
+  <block wx:if="{{!isFocus}}">
+    <view class="text text_con" catchtap="showKeyboard">
+      <icon class="icon-search" type="search" size="20"></icon>
+      <text wx:if="{{textValue}}" class="placeholder">{{textValue}}</text>
+      <text wx:else class="placeholder">请输入</text>
+    </view>
+  </block>
+  <!-- 未激活输入结束 -->
+
+  <!-- 激活输入框开始 -->
+  <block wx:else="{{isFocus}}">
+    <view class="text text_con_focus" catchtap="showKeyboard">
+      {{textValue}}
+      <view animation="{{animationData}}">|</view>
+    </view>
+  </block>
+  <!-- 激活输入框结束 -->
+  
+  <!-- 车牌键盘组件开始 -->
+  <vehicleKeyboard bindinput="inputChange" binddone="inputDone" id="keyboard"></vehicleKeyboard>
+  <!-- 车牌键盘组件结束 -->
+
+</view>

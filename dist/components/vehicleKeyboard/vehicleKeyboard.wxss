@@ -1,0 +1,63 @@
+/* pages/vehicleKeyboard/vehicleKeyboard.wxss */
+.keyboard {
+  z-index: 9999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #eaf1f9;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  border-bottom: 15rpx solid #eaf1f9;
+  border-top: 20rpx solid #eaf1f9;
+}
+
+.td {
+  font-family: "微软雅黑";
+  flex-grow: 1;
+  -webkit-flex-grow: 1;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  margin: 5rpx;
+  border: 1rpx solid #cdd0d5;
+  color: #1e1e1e;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  box-shadow: 5rpx 5rpx 2rpx #cdd0d5;
+}
+
+.td_nor {
+  flex: 1 1 10%;
+  -webkit-flex: 1 1 10%;
+}
+
+.td_num {
+  flex: 1 1 8%;
+  -webkit-flex: 1 1 8%;
+}
+
+.td_spec_fin {
+  background-color: #ff7149;
+  color: #fff;
+  flex: 1 1 23%;
+  -webkit-flex: 1 1 23%;
+}
+
+.td_spec_del {
+  width: 50px;
+  height: 50px;
+}
+
+.board_bg {
+  box-shadow: 0 0 0 #e5e5e5;
+  background: #e5e5e5;
+}
+
+.board_bg_spec {
+  box-shadow: 0 0 0 #e5e5e5;
+}
