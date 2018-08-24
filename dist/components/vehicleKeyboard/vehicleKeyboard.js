@@ -30,12 +30,12 @@ Component({
     keyboardNumber: '1234567890',
     keyboardAlph: 'QWERTYUIOPASDFGHJKLZXCVBNM',
     keyboardChi:
-      '沪冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤川青藏琼宁渝使领警',
+      '沪冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤川青藏琼宁渝',
     keyboardSpe: ['del', 'ok'],
-    keyboardSpeFor: ['删除', '确定'],
+    keyboardSpeFor: ['删', '确定'],
     keyboardValue: [],
     maxLength: 7,
-    msg: '提示信息'
+    errMsg: '更新车牌地区数据出错，将使用默认车牌地区信息'
   },
 
   /**
@@ -105,7 +105,7 @@ Component({
         this.triggerEvent('done', keyboardValue);
         return false;
       }
-      if (length >= 7) {
+      if (length >= this.data.maxLength) {
         return false;
       }
 
@@ -129,38 +129,30 @@ Component({
       return false;
     },
     /**
-     * 初始化加载车牌地区字段
+     * 更新车牌地区字段
      * url: String, 车牌地区字段请求地址
-     * update: Boolean, 是否强制更新车牌字段信息，false则使用上一次加载的缓存或者默认设置
      */
-    init: function(url, update) {
-      this.setData({
-        keyboardValue: []
-      });
-      wx.setStorage({
-        key: 'vehiclePlate',
-        data: this.data.keyboard1
-      });
-      if(update) {
-        wx.request({
-          url: url,
-          success: res => {
-            //根据数据加载车牌键盘，并将结果存入缓存，同一次打开小程序不再重复请求数据
-            let vehiclePlate = res; //TODO
-            wx.setStorage({
-              key: 'vehiclePlate',
-              data: vehiclePlate,
-            })
-          },
-          fail: err => {
-            wx.showToast({
-              title: '更新车牌地区数据出错，将使用默认车牌地区信息'
-            })
-          }
-        })
-      }
-      this.setData({
-        keyboard1: wx.getStorageSync('vehiclePlate')
+    update: function(url) {
+      wx.request({
+        url: url,
+        success: res => {
+          //根据数据加载车牌键盘，并将结果存入缓存，同一次打开小程序不再重复请求数据
+          let keyboardChi = res.data.data.join(''); //TODO: 根据返回的数据结构解析一下
+          wx.setStorage({
+            key: 'keyboardChi',
+            data: keyboardChi
+          });
+          this.setData({
+            keyboardChi: keyboardChi
+          });
+        },
+        fail: err => {
+          wx.showToast({
+            title: this.data.errMsg,
+            icon: 'none',
+            duration: 3000
+          });
+        }
       });
     },
     /**

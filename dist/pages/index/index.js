@@ -17,7 +17,9 @@ Page({
       //选择到键盘组件
       this.setData({
         keyboard: this.selectComponent('#keyboard')
-      })
+      });
+      //初始化更新键盘地区信息
+      this.data.keyboard.update("https://www.easy-mock.com/mock/5b7659524d2b8f332fda9647/demo/getVehicleDict");
     },
 
     /**
