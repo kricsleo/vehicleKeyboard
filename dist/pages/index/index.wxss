@@ -41,3 +41,20 @@
 .placeholder {
   color: #bdc3c7;
 }
+
+.keyboard-cursor {
+  width: 4rpx;
+  height: 42rpx;
+  background-color: #5382C6;
+  border-radius: 2rpx;
+  animation: blinking 1s ease-in-out infinite;
+}
+
+@keyframes blinking {
+0%, 100% {
+    opacity: 0;
+}
+50% {
+    opacity: 1;
+}
+}

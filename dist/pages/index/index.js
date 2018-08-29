@@ -76,9 +76,15 @@ Page({
      * 配合键盘输入事件：input，获取输入内容到虚拟输入框中
      */
     inputChange: function(e) {
-        this.setData({
-            textValue: e.detail
-        });
+      var textValue = e.detail;
+      if(textValue.length > 1) {
+        var textValueArr = Array.from(textValue);
+        textValueArr.splice(1, 1, textValue[1], ' ');
+        textValue = textValueArr.join('');
+      }
+      this.setData({
+        textValue: textValue
+      });
     },
 
     /**

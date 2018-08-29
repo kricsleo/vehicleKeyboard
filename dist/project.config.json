@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
 	"appid": "wxc7b5cb452a025554",
-	"projectname": "virtualKeyboard",
+	"projectname": "git-vehicleKeyboard",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

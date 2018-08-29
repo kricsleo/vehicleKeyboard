@@ -21,32 +21,29 @@
     <!--字母键盘-->
     <block wx:if="{{specialBtn}}" wx:for="{{keyboardAlph}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">
 
-      <block wx:if="{{idx != 19}}">
-        <view  class="td td_num"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+      <view wx:if="{{idx == 10}}" class="td td_num td_big_left"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
           <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
             {{itemName}}
           </view>
-        </view>
-      </block>
+      </view>
 
-      <block wx:else>
-        <view  class="td td_num"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
-          <view bindtap="tapKeyboard" data-val="{{keyboardSpe[0]}}">
-            {{keyboardSpeFor[0]}}
-          </view>
-        </view>
-        <view  class="td td_num"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+      <view wx:elif="{{idx == 18}}" class="td td_num td_big_right"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
           <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
             {{itemName}}
           </view>
-        </view>
-      </block>
+      </view>
+
+      <view wx:else class="td td_num"  hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+          <view bindtap="tapKeyboard" data-index="{{idx}}" data-val="{{itemName}}">
+            {{itemName}}
+          </view>
+      </view>
 
     </block>
 
     <!--完成按钮 start-->
-    <view wx:if="{{specialBtn}}" class="td td_spec_fin" bindtap="tapKeyboard" data-val="{{keyboardSpe[1]}}" hover-class="board_bg_spec" hover-start-time="0" hover-stay-time="80">
-      {{keyboardSpeFor[1]}}
+    <view wx:if="{{specialBtn}}" class="td td_spec_del iconfont icon-deleteicon" bindtap="tapKeyboard" data-val="{{keyboardSpe[0]}}" hover-class="board_bg_spec" hover-start-time="0" hover-stay-time="80">
+      {{keyboardSpeFor[0]}}
     </view>
     <!--完成按钮 end-->
   </view>

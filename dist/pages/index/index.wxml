@@ -14,7 +14,7 @@
   <block wx:else="{{isFocus}}">
     <view class="text text_con_focus" catchtap="showKeyboard">
       {{textValue}}
-      <view animation="{{animationData}}">|</view>
+      <view class="keyboard-cursor"></view>
     </view>
   </block>
   <!-- 激活输入框结束 -->
