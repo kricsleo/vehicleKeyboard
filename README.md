@@ -39,6 +39,3 @@
     ```
     3. js文件处理键盘事件<br />
     包括父页面的`onReady`事件中进行键盘组件的地区信息更新`update`事件，父页面的虚拟输入框元素的点击时触发`showKeyboard`，父页面其他部分点击时触发`hideKeyboard`，虚拟键盘组件输入时的`inputChange`事件以及点击完成时的`inputDone`事件，具体使用可参考代码示例中**index.js**
-
-## TODO
-- [ ] 组件如何自动初始化
